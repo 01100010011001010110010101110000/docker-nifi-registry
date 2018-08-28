@@ -24,7 +24,7 @@ add_property() {
 
   if [ -n "${property_value}" ]; then
     xmlstarlet ed --inplace --subnode "/providers/flowPersistenceProvider" --type elem -n property -v "${property_value}" ${providers_file};
-    xmlstarlet ed --inplace --subnode "/providers/flowPersistenceProvider/property[not(@name)]" --type attr -n name -v "${property_name}"
+    xmlstarlet ed --inplace --subnode "/providers/flowPersistenceProvider/property[not(@name)]" --type attr -n name -v "${property_name}" ${providers_file};
   fi
 }
 
